@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+        label {
+            font-size: 18px;
+            color: #555;
+        }
+        select {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .prediction {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Provide Your Review</h1>
+        <form action="/submit_review" method="post">
+            <label for="overall_rating">Overall Rating:</label>
+            <select id="overall_rating" name="overall_rating" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+            
+            <label for="work_satisfaction">Work Satisfaction:</label>
+            <select id="work_satisfaction" name="work_satisfaction" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+            
+            <label for="career_growth">Career Growth:</label>
+            <select id="career_growth" name="career_growth" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+            
+            <label for="skill_development">Skill Development:</label>
+            <select id="skill_development" name="skill_development" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+            
+            <label for="salary_benefits">Salary Benefits:</label>
+            <select id="salary_benefits" name="salary_benefits" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+
+            <label for="work_life_balance">Work life balance:</label>
+            <select id="work_life_balance" name="work_life_balance" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="job_secuirty">Job Secuirty:</label>
+            <select id="job_secuirty" name="job_secuirty" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="prediction">
+            {% if prediction %}
+                <p>Sentiment Prediction Class: {{ prediction }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+</html>
